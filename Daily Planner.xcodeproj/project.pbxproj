@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		935F4C0F2A4A2A8900A54E5A /* Daily_PlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F4C0E2A4A2A8900A54E5A /* Daily_PlannerApp.swift */; };
-		935F4C112A4A2A8900A54E5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F4C102A4A2A8900A54E5A /* ContentView.swift */; };
+		935F4C112A4A2A8900A54E5A /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F4C102A4A2A8900A54E5A /* PlannerView.swift */; };
 		935F4C132A4A2A8A00A54E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935F4C122A4A2A8A00A54E5A /* Assets.xcassets */; };
 		935F4C162A4A2A8A00A54E5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935F4C152A4A2A8A00A54E5A /* Preview Assets.xcassets */; };
 		935F4C202A4A2A8A00A54E5A /* Daily_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F4C1F2A4A2A8A00A54E5A /* Daily_PlannerTests.swift */; };
 		935F4C2A2A4A2A8A00A54E5A /* Daily_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F4C292A4A2A8A00A54E5A /* Daily_PlannerUITests.swift */; };
 		935F4C2C2A4A2A8A00A54E5A /* Daily_PlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935F4C2B2A4A2A8A00A54E5A /* Daily_PlannerUITestsLaunchTests.swift */; };
+		93727DC22A541BB400874704 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93727DC12A541BB400874704 /* ViewUtil.swift */; };
+		93727DC42A541BDF00874704 /* HourEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93727DC32A541BDF00874704 /* HourEntry.swift */; };
+		93727DC62A541C0000874704 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93727DC52A541C0000874704 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		935F4C0B2A4A2A8900A54E5A /* Daily Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		935F4C0E2A4A2A8900A54E5A /* Daily_PlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_PlannerApp.swift; sourceTree = "<group>"; };
-		935F4C102A4A2A8900A54E5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		935F4C102A4A2A8900A54E5A /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		935F4C122A4A2A8A00A54E5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		935F4C152A4A2A8A00A54E5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		935F4C1B2A4A2A8A00A54E5A /* Daily PlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily PlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,9 @@
 		935F4C252A4A2A8A00A54E5A /* Daily PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		935F4C292A4A2A8A00A54E5A /* Daily_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_PlannerUITests.swift; sourceTree = "<group>"; };
 		935F4C2B2A4A2A8A00A54E5A /* Daily_PlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_PlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		93727DC12A541BB400874704 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
+		93727DC32A541BDF00874704 /* HourEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourEntry.swift; sourceTree = "<group>"; };
+		93727DC52A541C0000874704 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				935F4C0E2A4A2A8900A54E5A /* Daily_PlannerApp.swift */,
-				935F4C102A4A2A8900A54E5A /* ContentView.swift */,
+				935F4C102A4A2A8900A54E5A /* PlannerView.swift */,
+				93727DC52A541C0000874704 /* Todo.swift */,
+				93727DC32A541BDF00874704 /* HourEntry.swift */,
+				93727DC12A541BB400874704 /* ViewUtil.swift */,
 				935F4C122A4A2A8A00A54E5A /* Assets.xcassets */,
 				935F4C142A4A2A8A00A54E5A /* Preview Content */,
 			);
@@ -257,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				935F4C112A4A2A8900A54E5A /* ContentView.swift in Sources */,
+				935F4C112A4A2A8900A54E5A /* PlannerView.swift in Sources */,
 				935F4C0F2A4A2A8900A54E5A /* Daily_PlannerApp.swift in Sources */,
+				93727DC42A541BDF00874704 /* HourEntry.swift in Sources */,
+				93727DC22A541BB400874704 /* ViewUtil.swift in Sources */,
+				93727DC62A541C0000874704 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

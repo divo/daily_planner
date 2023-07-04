@@ -1,80 +1,7 @@
 
 import SwiftUI
 
-struct ViewUtil {
-  static func dividerLine() -> some View {
-    Divider()
-      .frame(height: 1)
-      .padding(.horizontal, 30)
-      .background(.black)
-  }
-  
-  static func textLabel(_ text: String) -> some View {
-    Text(text)
-      .font(.title2)
-      .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-  }
-  
-  static func titleLabel(_ text: String) -> some View {
-   Text(text)
-      .font(.title)
-      .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-  }
-  
-  static func smallLabel(_ text: String) -> some View {
-    Text(text)
-      .font(.subheadline)
-      .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
-  }
-  
-  static func divider() -> some View {
-    Rectangle()
-      .frame(height: 1)
-      .foregroundColor(.primary)
-  }
-}
-
-struct Todo: View, Identifiable {
-  let id = UUID()
-  @State var text: String = ""
-  @State var done: Bool = false
-  @State var editable: Bool = true
-  
-  var body: some View {
-    HStack {
-      Button {
-        done.toggle()
-      } label: {
-        if done {
-          Image(systemName: "checkmark.square")
-        } else {
-          Image(systemName: "square")
-        }
-      }
-      if editable {
-        TextField("", text: $text).overlay(ViewUtil.divider(), alignment: .bottom)
-      } else {
-        Text(text)
-      }
-    }
-  }
-}
-
-struct HourEntry: View, Identifiable {
-  let id = UUID()
-  let hour: String
-  @State var text: String = ""
-  
-  var body: some View {
-    HStack{
-      Image(systemName: "clock")
-      ViewUtil.smallLabel(hour).frame(width: 25)
-      TextField("", text: $text).overlay(ViewUtil.divider(), alignment: .bottom)
-    }
-  }
-}
-
-struct ContentView: View {
+struct PlannerView: View {
   @State var beforeText = ""
   @State var improvText = ""
   @State var todo: [Todo] = (0..<3).map { _ in Todo() }
@@ -127,7 +54,7 @@ struct ContentView: View {
           }
         }
         
-        ViewUtil.textLabel("what will I do tomrrow?")
+        ViewUtil.textLabel("what will I do tomorrow?")
         TextEditor(text: $tomorrow)
           .frame(height: 100)
           .overlay(ViewUtil.divider(), alignment: .bottom)
@@ -144,6 +71,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    PlannerView()
   }
 }
