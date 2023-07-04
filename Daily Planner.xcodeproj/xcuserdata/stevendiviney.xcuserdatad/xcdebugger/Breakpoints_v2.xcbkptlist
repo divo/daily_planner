@@ -3,4 +3,69 @@
    uuid = "AE9933EF-CB78-4C8F-80F7-C55A823D55D0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3803928B-BAEE-417B-B66C-9C8898881A6F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Daily Planner/PlannerViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "observeChanges()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3803928B-BAEE-417B-B66C-9C8898881A6F - af3171ccb3c41900"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;Swift.Never&gt;) -&gt; () in Daily_Planner.PlannerViewModel.observeChanges() -&gt; ()"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/PlannerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "3803928B-BAEE-417B-B66C-9C8898881A6F - fe88f3b0d59c43e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (()) -&gt; () in Daily_Planner.PlannerViewModel.observeChanges() -&gt; ()"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/PlannerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "3803928B-BAEE-417B-B66C-9C8898881A6F - 4d59d0533772c7e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (()) -&gt; () in Daily_Planner.PlannerViewModel.observeChanges() -&gt; ()"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/PlannerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

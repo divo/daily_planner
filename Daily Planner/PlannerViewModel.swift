@@ -35,15 +35,17 @@ class PlannerViewModel: ObservableObject, Codable {
   private var cancellables = Set<AnyCancellable>()
   
   init() {
-    $beforeText
-      .sink { [weak self] change in
-        self?.objectWillChange.send()
-        // Perform any additional actions here
+    observeChanges()
+  }
+  
+  private func observeChanges() {
+    objectWillChange
+      .sink { change in
+        
       }
       .store(in: &cancellables)
   }
-  
-  
+
   required init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     beforeText = try container.decode(String.self, forKey: .beforeText)

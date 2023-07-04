@@ -2,18 +2,17 @@
 import SwiftUI
 
 struct PlannerView: View {
-  @StateObject var viewModel = PlannerViewModel()
+  @State var viewModel = PlannerViewModel()
+  let file: URL
   
   var body: some View {
    List {
      Group {
        Button {
-         let encoded = try! JSONEncoder().encode(self.viewModel)
-         print(String(data: encoded, encoding: .utf8))
+         FileUtil.writeFile(self.file, viewModel: self.viewModel)
        } label: {
-         Text("Encode")
+         Text("Write")
        }
-
      }
      
       Group {
@@ -66,12 +65,8 @@ struct PlannerView: View {
           .overlay(ViewUtil.divider(), alignment: .bottom)
       }
       
+   }.onAppear {
+     self.viewModel = FileUtil.readFile(self.file)
    }
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    PlannerView()
   }
 }
