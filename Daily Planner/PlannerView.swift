@@ -3,6 +3,8 @@ import SwiftUI
 
 struct PlannerView: View {
   @State var viewModel = PlannerViewModel()
+  @Environment(\.scenePhase) var scenePhase
+
   let file: URL
   
   var body: some View {
@@ -59,6 +61,11 @@ struct PlannerView: View {
       
    }.onAppear {
      self.viewModel = FileUtil.readFile(self.file)
+   }
+   .onDisappear {
+     FileUtil.writeFile(self.file, viewModel: self.viewModel)
+   }.onChange(of: scenePhase) { newValue in
+     FileUtil.writeFile(self.file, viewModel: self.viewModel)
    }
   }
 }
