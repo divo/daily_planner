@@ -4,11 +4,11 @@ import SwiftUI
 struct PlannerView: View {
   @State var viewModel = PlannerViewModel()
   @Environment(\.scenePhase) var scenePhase
-
+  
   let file: URL
   
   var body: some View {
-   List {
+    List {
       Group {
         ViewUtil.titleLabel("before")
         TextEditor(text: $viewModel.beforeText)
@@ -40,7 +40,7 @@ struct PlannerView: View {
         
         Group {
           Picker(selection: $viewModel.grade) {
-           ForEach(viewModel.grades, id: \.self) { item in // 4
+            ForEach(viewModel.grades, id: \.self) { item in // 4
               Text(item) // 5
             }
           } label: {
@@ -59,13 +59,14 @@ struct PlannerView: View {
           .overlay(ViewUtil.divider(), alignment: .bottom)
       }
       
-   }.onAppear {
-     self.viewModel = FileUtil.readFile(self.file)
-   }
-   .onDisappear {
-     FileUtil.writeFile(self.file, viewModel: self.viewModel)
-   }.onChange(of: scenePhase) { newValue in
-     FileUtil.writeFile(self.file, viewModel: self.viewModel)
-   }
+    }.navigationTitle(file.lastPathComponent)
+    .onAppear {
+      self.viewModel = FileUtil.readFile(self.file)
+    }
+    .onDisappear {
+      FileUtil.writeFile(self.file, viewModel: self.viewModel)
+    }.onChange(of: scenePhase) { newValue in
+      FileUtil.writeFile(self.file, viewModel: self.viewModel)
+    }
   }
 }

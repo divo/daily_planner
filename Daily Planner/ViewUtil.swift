@@ -12,7 +12,7 @@ struct ViewUtil {
     Divider()
       .frame(height: 1)
       .padding(.horizontal, 30)
-      .background(.black)
+      .background(Color.primary)
   }
   
   static func textLabel(_ text: String) -> some View {
@@ -36,6 +36,6 @@ struct ViewUtil {
   static func divider() -> some View {
     Rectangle()
       .frame(height: 1)
-      .foregroundColor(.primary)
+      .foregroundColor(.primary.opacity(0.2))
   }
 }

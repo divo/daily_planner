@@ -7,9 +7,20 @@
 
 import SwiftUI
 
+struct Style {
+  static let primaryColor = Color(red: 105 / 255, green: 87 / 255, blue: 232 / 255)
+  static let primaryUIColor = UIColor(red: 105 / 255, green: 87 / 255, blue: 232 / 255, alpha: 1.0)
+}
+
 struct IndexView: View {
   @State var files = FileUtil.listDocuments()
   @State var showDetails = true
+  
+  init() {
+    let navBarAppearance = UINavigationBar.appearance()
+    navBarAppearance.largeTitleTextAttributes = [.foregroundColor: Style.primaryUIColor]
+    navBarAppearance.titleTextAttributes = [.foregroundColor: Style.primaryUIColor]
+  }
   
   var body: some View {
     NavigationView {
@@ -30,6 +41,7 @@ struct IndexView: View {
           }
         }
     }
+    .accentColor(Style.primaryColor)
   }
   
   func pushEntry() {
