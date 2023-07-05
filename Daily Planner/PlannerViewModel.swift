@@ -34,18 +34,8 @@ class PlannerViewModel: ObservableObject, Codable {
   
   private var cancellables = Set<AnyCancellable>()
   
-  init() {
-    observeChanges()
-  }
+  init() {}
   
-  private func observeChanges() {
-    objectWillChange
-      .sink { change in
-        
-      }
-      .store(in: &cancellables)
-  }
-
   required init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     beforeText = try container.decode(String.self, forKey: .beforeText)

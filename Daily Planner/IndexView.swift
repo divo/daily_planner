@@ -19,10 +19,6 @@ struct IndexView: View {
         } label: {
           Text(file.lastPathComponent)
         }
-        Button("Clear") {
-          FileUtil.deleteFile(FileUtil.dateToFilename(Date.now))
-          files = FileUtil.listDocuments()
-        }
       }.navigationTitle("Day Planner")
         .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {

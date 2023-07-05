@@ -7,14 +7,6 @@ struct PlannerView: View {
   
   var body: some View {
    List {
-     Group {
-       Button {
-         FileUtil.writeFile(self.file, viewModel: self.viewModel)
-       } label: {
-         Text("Write")
-       }
-     }
-     
       Group {
         ViewUtil.titleLabel("before")
         TextEditor(text: $viewModel.beforeText)
