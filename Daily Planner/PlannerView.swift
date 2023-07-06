@@ -2,7 +2,8 @@
 import SwiftUI
 
 struct PlannerView: View {
-  @State var viewModel = PlannerViewModel()
+  @ObservedObject var viewModel = PlannerViewModel()
+  
   @Environment(\.scenePhase) var scenePhase
   
   let file: URL
@@ -19,11 +20,14 @@ struct PlannerView: View {
         TextField("", text: $viewModel.improvText).overlay(ViewUtil.divider(), alignment: .bottom)
         
         ViewUtil.textLabel("todo")
-        ForEach(viewModel.todo) { todo in todo }
+        ForEach($viewModel.todos, id: \.id) { todo in
+          TodoView(text: todo.text, done: todo.done, editable: todo.editable)
+        }
+        
         
         HStack {
           Spacer()
-          Button(action: { viewModel.todo.append(Todo()) }, label: { Image(systemName: "plus") })
+//          Button(action: { viewModel.todo.append(Todo(id: viewModel.todo.count)) }, label: { Image(systemName: "plus") })
           Spacer()
         }
         
@@ -36,7 +40,7 @@ struct PlannerView: View {
         ViewUtil.titleLabel("after")
         
         ViewUtil.textLabel("habbits")
-        ForEach(viewModel.habbits) { habbit in habbit }
+//        ForEach(viewModel.habbits) { habbit in habbit }
         
         Group {
           Picker(selection: $viewModel.grade) {
