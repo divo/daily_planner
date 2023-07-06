@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct PlannerView: View {
-  @ObservedObject var viewModel = PlannerViewModel()
+  @State var viewModel = PlannerViewModel()
   
   @Environment(\.scenePhase) var scenePhase
   
@@ -65,7 +65,7 @@ struct PlannerView: View {
       
     }.navigationTitle(file.lastPathComponent)
     .onAppear {
-      self.viewModel = FileUtil.readFile(self.file)
+      viewModel = FileUtil.readFile(self.file)
     }
     .onDisappear {
       FileUtil.writeFile(self.file, viewModel: self.viewModel)
