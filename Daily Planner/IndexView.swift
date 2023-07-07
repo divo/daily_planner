@@ -38,6 +38,9 @@ struct IndexView: View {
         }
     }
     .accentColor(Style.primaryColor)
+    .onAppear {
+      NotificationUtil.requestPermission()
+    }
   }
   
   func pushEntry() {
