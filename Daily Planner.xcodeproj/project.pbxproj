@@ -20,6 +20,7 @@
 		93727DC22A541BB400874704 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93727DC12A541BB400874704 /* ViewUtil.swift */; };
 		93727DC42A541BDF00874704 /* HourEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93727DC32A541BDF00874704 /* HourEntry.swift */; };
 		93727DC62A541C0000874704 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93727DC52A541C0000874704 /* Todo.swift */; };
+		9385DAC92A58723400963790 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385DAC82A58723400963790 /* Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		93727DC12A541BB400874704 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		93727DC32A541BDF00874704 /* HourEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourEntry.swift; sourceTree = "<group>"; };
 		93727DC52A541C0000874704 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		9385DAC82A58723400963790 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				935F4C0E2A4A2A8900A54E5A /* Daily_PlannerApp.swift */,
 				935EC6912A546DBD0030D07D /* IndexView.swift */,
+				9385DAC82A58723400963790 /* Style.swift */,
 				935EC68F2A546D110030D07D /* FileUtil.swift */,
 				935F4C102A4A2A8900A54E5A /* PlannerView.swift */,
 				935EC68D2A54644F0030D07D /* PlannerViewModel.swift */,
@@ -282,6 +285,7 @@
 				93727DC22A541BB400874704 /* ViewUtil.swift in Sources */,
 				935EC6922A546DBD0030D07D /* IndexView.swift in Sources */,
 				93727DC62A541C0000874704 /* Todo.swift in Sources */,
+				9385DAC92A58723400963790 /* Style.swift in Sources */,
 				935EC68E2A54644F0030D07D /* PlannerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,11 +6,7 @@
 //
 
 import SwiftUI
-
-struct Style {
-  static let primaryColor = Color(red: 105 / 255, green: 87 / 255, blue: 232 / 255)
-  static let primaryUIColor = UIColor(red: 105 / 255, green: 87 / 255, blue: 232 / 255, alpha: 1.0)
-}
+import UserNotifications
 
 struct IndexView: View {
   @State var files = FileUtil.listDocuments()
