@@ -28,6 +28,11 @@ struct FileUtil {
   static func readFile(_ url: URL) -> PlannerViewModel {
     return try! JSONDecoder().decode(PlannerViewModel.self, from: Data(contentsOf: url))
   }
+  
+  static func update(object: PlannerViewModel, with url: URL) {
+    let storedObj = try! JSONDecoder().decode(PlannerViewModel.self, from: Data(contentsOf: url))
+    object.update(other: storedObj)
+  }
 
   static func writeFile(_ url: URL, viewModel: PlannerViewModel) {
     let json = try! JSONEncoder().encode(viewModel)

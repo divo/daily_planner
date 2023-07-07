@@ -7,14 +7,17 @@
 
 import SwiftUI
 
-class TodoViewModel: ObservableObject, Identifiable, Codable {
+@objc class TodoViewModel: NSObject, ObservableObject, Identifiable, Codable {
   let id: Int
-  @Published var text: String = ""
-  @Published var done: Bool = false
-  @Published var editable: Bool = true
+  @Published var text: String
+  @Published var done: Bool
+  @Published var editable: Bool
   
-  init(id: Int) {
+  init(id: Int, text: String = "", done: Bool = false, editable: Bool = true) {
     self.id = id
+    self.text = text
+    self.done = done
+    self.editable = editable
   }
   
   enum CodingKeys: CodingKey {
@@ -36,7 +39,6 @@ class TodoViewModel: ObservableObject, Identifiable, Codable {
     try container.encode(done, forKey: .done)
     try container.encode(editable, forKey: .editable)
   }
-
 }
 
 struct TodoView: View {
@@ -46,20 +48,31 @@ struct TodoView: View {
   
   var body: some View {
     HStack {
-      Button {
-        done.toggle()
-      } label: {
-        if done {
-          Image(systemName: "checkmark.square")
-        } else {
-          Image(systemName: "square")
-        }
-      }
+      Toggle("", isOn: $done)
+        .toggleStyle(CheckToggleStyle())
       if editable {
-        TextField("", text: $text).overlay(ViewUtil.divider(), alignment: .bottom)
+        TextField("", text: $text).overlay(ViewUtil.divider(), alignment: .bottom).frame(idealWidth: .greatestFiniteMagnitude)
       } else {
-        Text(text)
+        Text(text).strikethrough($done.wrappedValue)
       }
     }
+  }
+}
+
+struct CheckToggleStyle: ToggleStyle {
+  func makeBody(configuration: Configuration) -> some View {
+    Button {
+      configuration.isOn.toggle()
+    } label: {
+      Label {
+        configuration.label
+      } icon: {
+        Image(systemName: configuration.isOn ? "checkmark.circle.fill" : "circle")
+          .foregroundStyle(configuration.isOn ? Color.accentColor : .secondary)
+          .accessibility(label: Text(configuration.isOn ? "Checked" : "Unchecked"))
+          .imageScale(.large)
+      }
+    }
+    .buttonStyle(.plain)
   }
 }

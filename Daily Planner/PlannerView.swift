@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct PlannerView: View {
-  @State var viewModel = PlannerViewModel()
+  @StateObject var viewModel = PlannerViewModel()
   
   @Environment(\.scenePhase) var scenePhase
   
@@ -27,12 +27,18 @@ struct PlannerView: View {
         
         HStack {
           Spacer()
-//          Button(action: { viewModel.todo.append(Todo(id: viewModel.todo.count)) }, label: { Image(systemName: "plus") })
+          Button {
+            viewModel.todos.append(TodoViewModel(id: viewModel.todos.count))
+          } label: {
+            Image(systemName: "plus")
+          }
           Spacer()
         }
         
         ViewUtil.textLabel("schedule")
-        ForEach(viewModel.hours) { hour in hour }
+        ForEach($viewModel.hours, id: \.id) { hour in
+          HourView(id: hour.id ,text: hour.text)
+        }
       }
       
       Group {
@@ -40,7 +46,10 @@ struct PlannerView: View {
         ViewUtil.titleLabel("after")
         
         ViewUtil.textLabel("habbits")
-//        ForEach(viewModel.habbits) { habbit in habbit }
+        ForEach($viewModel.habbits, id: \.id) { habbit in
+          TodoView(text: habbit.text, done: habbit.done, editable: habbit.editable)
+        }
+ 
         
         Group {
           Picker(selection: $viewModel.grade) {
@@ -65,7 +74,7 @@ struct PlannerView: View {
       
     }.navigationTitle(file.lastPathComponent)
     .onAppear {
-      viewModel = FileUtil.readFile(self.file)
+      viewModel.update(other: FileUtil.readFile(self.file))
     }
     .onDisappear {
       FileUtil.writeFile(self.file, viewModel: self.viewModel)

@@ -7,36 +7,41 @@
 
 import SwiftUI
 
-struct HourEntry: View, Identifiable {
-  var id = UUID()
-  var hour: String
-  @State var text: String = ""
+@objc class HourViewModel: NSObject, ObservableObject, Identifiable, Codable{
+  let id: Int
+  @Published var text: String
+  
+  init(id: Int, text: String = "") {
+    self.id = id
+    self.text = text
+  }
+
+  enum CodingKeys: CodingKey {
+    case id, text
+  }
+  
+  required init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    id = try container.decode(Int.self, forKey: .id)
+    text = try container.decode(String.self, forKey: .text)
+  }
+  
+  func encode(to encoder: Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    try container.encode(id, forKey: .id)
+    try container.encode(text, forKey: .text)
+  }
+}
+
+struct HourView: View{
+  let id: Int
+  @Binding var text: String
   
   var body: some View {
     HStack{
       Image(systemName: "clock")
-      ViewUtil.smallLabel(hour).frame(width: 25)
+      ViewUtil.smallLabel(String(id)).frame(width: 25)
       TextField("", text: $text).overlay(ViewUtil.divider(), alignment: .bottom)
     }
   }
-}
-
-extension HourEntry: Codable {
-    enum codingKeys: CodingKey {
-        case id, hour, text
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: codingKeys.self)
-        id = try container.decode(UUID.self, forKey: .id)
-        hour = try container.decode(String.self, forKey: .hour)
-        text = try container.decode(String.self, forKey: .text)
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: codingKeys.self)
-        try container.encode(id, forKey: .id)
-        try container.encode(hour, forKey: .hour)
-        try container.encode(text, forKey: .text)
-    }
 }
