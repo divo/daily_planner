@@ -17,7 +17,7 @@ struct PlannerView: View {
           .overlay(ViewUtil.divider(), alignment: .bottom)
         
         ViewUtil.textLabel("1 hour of self improvement on")
-        TextField("", text: $viewModel.improvText).overlay(ViewUtil.divider(), alignment: .bottom)
+        TextField("Habbit, Study or Skill", text: $viewModel.improvText).overlay(ViewUtil.divider(), alignment: .bottom)
         
         ViewUtil.textLabel("todo")
         ForEach($viewModel.todos, id: \.id) { todo in
