@@ -21,6 +21,8 @@
 		93727DC42A541BDF00874704 /* HourEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93727DC32A541BDF00874704 /* HourEntry.swift */; };
 		93727DC62A541C0000874704 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93727DC52A541C0000874704 /* Todo.swift */; };
 		9385DAC92A58723400963790 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385DAC82A58723400963790 /* Style.swift */; };
+		9385DACB2A58732400963790 /* CheckToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385DACA2A58732400963790 /* CheckToggleStyle.swift */; };
+		9385DACD2A58A3AA00963790 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385DACC2A58A3AA00963790 /* NotificationUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		93727DC32A541BDF00874704 /* HourEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourEntry.swift; sourceTree = "<group>"; };
 		93727DC52A541C0000874704 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		9385DAC82A58723400963790 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		9385DACA2A58732400963790 /* CheckToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckToggleStyle.swift; sourceTree = "<group>"; };
+		9385DACC2A58A3AA00963790 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +119,9 @@
 				935F4C102A4A2A8900A54E5A /* PlannerView.swift */,
 				935EC68D2A54644F0030D07D /* PlannerViewModel.swift */,
 				93727DC52A541C0000874704 /* Todo.swift */,
+				9385DACA2A58732400963790 /* CheckToggleStyle.swift */,
 				93727DC32A541BDF00874704 /* HourEntry.swift */,
+				9385DACC2A58A3AA00963790 /* NotificationUtil.swift */,
 				93727DC12A541BB400874704 /* ViewUtil.swift */,
 				935F4C122A4A2A8A00A54E5A /* Assets.xcassets */,
 				935F4C142A4A2A8A00A54E5A /* Preview Content */,
@@ -280,12 +286,14 @@
 			files = (
 				935F4C112A4A2A8900A54E5A /* PlannerView.swift in Sources */,
 				935EC6902A546D110030D07D /* FileUtil.swift in Sources */,
+				9385DACB2A58732400963790 /* CheckToggleStyle.swift in Sources */,
 				935F4C0F2A4A2A8900A54E5A /* Daily_PlannerApp.swift in Sources */,
 				93727DC42A541BDF00874704 /* HourEntry.swift in Sources */,
 				93727DC22A541BB400874704 /* ViewUtil.swift in Sources */,
 				935EC6922A546DBD0030D07D /* IndexView.swift in Sources */,
 				93727DC62A541C0000874704 /* Todo.swift in Sources */,
 				9385DAC92A58723400963790 /* Style.swift in Sources */,
+				9385DACD2A58A3AA00963790 /* NotificationUtil.swift in Sources */,
 				935EC68E2A54644F0030D07D /* PlannerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +456,7 @@
 				DEVELOPMENT_TEAM = 9F7FZ3S533;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -477,6 +486,7 @@
 				DEVELOPMENT_TEAM = 9F7FZ3S533;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
