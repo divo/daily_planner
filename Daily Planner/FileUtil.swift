@@ -56,6 +56,12 @@ struct FileUtil {
     dateFormatter.dateFormat = "yyyy-MM-dd"
     return dateFormatter.string(from: date)
   }
+  
+  static func filenameToDate(_ filename: String) -> Date {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    return dateFormatter.date(from: filename)!
+  }
 }
 
 extension URL: Identifiable {

@@ -7,17 +7,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B7BF8C18-DDCA-489B-BA2E-A64D43691070"
+            uuid = "FC1A8B66-A324-441B-A351-CB87ABFD060F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Daily Planner/HourEntry.swift"
+            filePath = "Daily Planner/IndexView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "pushEntry()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC1A8B66-A324-441B-A351-CB87ABFD060F - 626159df38a21b44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Daily_Planner.IndexView.pushEntry() -&gt; ()"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/IndexView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "FC1A8B66-A324-441B-A351-CB87ABFD060F - 626159df38a21b44"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Daily_Planner.IndexView.pushEntry() -&gt; ()"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/IndexView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Daily Planner/NotificationUtil.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "scheduleNotification(uuid:message:date:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B - f3ef40a11bccf004"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Daily_Planner.NotificationUtil.removeNotification(uuid: Foundation.UUID) -&gt; ()"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/NotificationUtil.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B - b8bcfc7e1511a762"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Daily_Planner.NotificationUtil.scheduleNotification(uuid: Foundation.UUID, message: Swift.String, date: Foundation.Date) -&gt; Swift.Bool"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/NotificationUtil.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B - b8bcfc7e1511a762"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Daily_Planner.NotificationUtil.scheduleNotification(uuid: Foundation.UUID, message: Swift.String, date: Foundation.Date) -&gt; Swift.Bool"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/NotificationUtil.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "724">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct PlannerView: View {
   @StateObject var viewModel = PlannerViewModel()
+  @State var date: String = ""
   
   @Environment(\.scenePhase) var scenePhase
   
@@ -37,7 +38,7 @@ struct PlannerView: View {
         
         ViewUtil.textLabel("schedule")
         ForEach($viewModel.hours, id: \.id) { hour in
-          HourView(id: hour.id ,text: hour.text)
+          HourView(id: hour.id, notificationID: hour.wrappedValue.notificationID, text: hour.text, reminder: hour.reminder, date: self.$date)
         }
       }
       
@@ -75,6 +76,7 @@ struct PlannerView: View {
     }.navigationTitle(file.lastPathComponent)
     .onAppear {
       viewModel.update(other: FileUtil.readFile(self.file))
+      self.date = self.file.lastPathComponent
     }
     .onDisappear {
       FileUtil.writeFile(self.file, viewModel: self.viewModel)

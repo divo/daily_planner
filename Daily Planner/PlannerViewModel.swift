@@ -65,7 +65,6 @@ import Combine
     tomorrow = try container.decode(String.self, forKey: .tomorrow)
     grade = try container.decode(String.self, forKey: .grade)
     reflection = try container.decode(String.self, forKey: .reflection)
-    
 //    test = try? container.decode(String.self, forKey: .forwardEx)
   }
   
@@ -80,7 +79,6 @@ import Combine
     try container.encode(tomorrow, forKey: .tomorrow)
     try container.encode(grade, forKey: .grade)
     try container.encode(reflection, forKey: .reflection)
-    
 //    try container.encode(forwardEx, forKey: .forwardEx)
   }
 }
