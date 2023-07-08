@@ -29,11 +29,13 @@ struct IndexView: View {
       }.navigationTitle("Day Planner")
         .toolbar {
           ToolbarItem(placement: .navigationBarTrailing) {
-            Button {
-              pushEntry()
-            } label: {
-              Image(systemName: "doc.badge.plus")
-            }
+            Image(systemName: "doc.badge.plus")
+              .foregroundColor(.accentColor)
+              .onTapGesture {
+                pushEntry()
+              }
+              .onLongPressGesture(minimumDuration: 0.1) {
+              }
           }
         }
     }
