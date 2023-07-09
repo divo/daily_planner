@@ -22,7 +22,9 @@ struct IndexView: View {
   
   var body: some View {
     NavigationView {
-      List(files) { file in
+      List(files.sorted(by: { l, r in
+        l.lastPathComponent > r.lastPathComponent
+      })) { file in
         NavigationLink {
           PlannerView(file: file)
         } label: {
