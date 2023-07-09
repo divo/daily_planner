@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FC1A8B66-A324-441B-A351-CB87ABFD060F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Daily Planner/IndexView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "pushEntry()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FC1A8B66-A324-441B-A351-CB87ABFD060F - 626159df38a21b44"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Daily_Planner.IndexView.pushEntry() -&gt; ()"
-                  moduleName = "Daily Planner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/IndexView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  uuid = "FC1A8B66-A324-441B-A351-CB87ABFD060F - 626159df38a21b44"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Daily_Planner.IndexView.pushEntry() -&gt; ()"
-                  moduleName = "Daily Planner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/IndexView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "164">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		935E63F22A5951CE00DBD985 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935E63F12A5951CE00DBD985 /* ConfigView.swift */; };
 		935EC68E2A54644F0030D07D /* PlannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935EC68D2A54644F0030D07D /* PlannerViewModel.swift */; };
 		935EC6902A546D110030D07D /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935EC68F2A546D110030D07D /* FileUtil.swift */; };
 		935EC6922A546DBD0030D07D /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935EC6912A546DBD0030D07D /* IndexView.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		935E63F12A5951CE00DBD985 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		935EC68D2A54644F0030D07D /* PlannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewModel.swift; sourceTree = "<group>"; };
 		935EC68F2A546D110030D07D /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		935EC6912A546DBD0030D07D /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				9385DAC82A58723400963790 /* Style.swift */,
 				935EC68F2A546D110030D07D /* FileUtil.swift */,
 				935F4C102A4A2A8900A54E5A /* PlannerView.swift */,
+				935E63F12A5951CE00DBD985 /* ConfigView.swift */,
 				935EC68D2A54644F0030D07D /* PlannerViewModel.swift */,
 				93727DC52A541C0000874704 /* Todo.swift */,
 				9385DACA2A58732400963790 /* CheckToggleStyle.swift */,
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				935E63F22A5951CE00DBD985 /* ConfigView.swift in Sources */,
 				935F4C112A4A2A8900A54E5A /* PlannerView.swift in Sources */,
 				935EC6902A546D110030D07D /* FileUtil.swift in Sources */,
 				9385DACB2A58732400963790 /* CheckToggleStyle.swift in Sources */,

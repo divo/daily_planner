@@ -11,6 +11,8 @@ import UserNotifications
 struct IndexView: View {
   @State var files = FileUtil.listDocuments()
   @State var showDetails = true
+  @State var showingPopover = false
+  @State var selectedDate = Calendar.current.date(byAdding: .day, value: 1, to: Date.now)!
   
   init() {
     let navBarAppearance = UINavigationBar.appearance()
@@ -35,6 +37,17 @@ struct IndexView: View {
                 pushEntry()
               }
               .onLongPressGesture(minimumDuration: 0.1) {
+                showingPopover = true
+              }.popover(isPresented: $showingPopover) {
+                VStack {
+                  DatePicker(selection: $selectedDate, in: Date.now..., displayedComponents: .date) {
+                    Text("Select a date for new entry")
+                  }
+                  Button("Done") {
+                    showingPopover = false
+                    pushEntry(date: self.selectedDate)
+                  }
+                }.padding(20)
               }
           }
         }
@@ -45,8 +58,8 @@ struct IndexView: View {
     }
   }
   
-  func pushEntry() {
-    let filename = FileUtil.dateToFilename(Date.now)
+  func pushEntry(date: Date = Date.now) {
+    let filename = FileUtil.dateToFilename(date)
     if !FileUtil.checkFileExists(filename) {
       FileUtil.createFile(filename)
       files = FileUtil.listDocuments()
