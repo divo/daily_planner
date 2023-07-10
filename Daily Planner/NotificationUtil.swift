@@ -18,8 +18,20 @@ struct NotificationUtil {
     }
   }
   
-  static func scheduleNotification(uuid: UUID, message: String, date: Date) -> Bool {
-    removeNotification(uuid: uuid) // I'm probably updating the message
+  static func scheduleRepeatingNotification(id: String, message: String, date: Date) -> Bool {
+    removeNotification(id: id)
+    
+    let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: date)
+    let content = UNMutableNotificationContent()
+    content.title = message 
+    content.sound = .default            
+
+    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+    let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+    UNUserNotificationCenter.current().add(request)
+    return true
+  }
+  
   static func scheduleNotification(id: String, message: String, date: Date) -> Bool {
     removeNotification(id: id) // I'm probably updating the message
     

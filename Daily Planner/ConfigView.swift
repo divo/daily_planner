@@ -11,8 +11,8 @@ struct ConfigView: View {
   @State var habbitsText = UserDefaults().string(forKey: "habbits") ?? ""
   @State var dayStart = UserDefaults().object(forKey: "dayStart") as? Date ?? Date.now
   @State var planningTime = UserDefaults().object(forKey: "planningTime") as? Date ?? Date.now
-  @State var startNotification = true
-  @State var planningNotification = true
+  @State var startNotification = false
+  @State var planningNotification = false
   
   var body: some View {
     List {
@@ -34,10 +34,15 @@ struct ConfigView: View {
         DatePicker("Day start", selection: $dayStart, displayedComponents: [.hourAndMinute])
           .datePickerStyle(CompactDatePickerStyle())
       }.onAppear {
-        let calendar = Calendar.current
-        let defaultTime = calendar.date(bySettingHour: 21, minute: 0, second: 0, of: Date()) ?? Date()
-        planningTime = defaultTime
+        setTime(7, for: "dayStart", date: $dayStart)
       }.padding(10)
+        .onChange(of: startNotification) { value in
+          if value {
+            NotificationUtil.scheduleRepeatingNotification(id: "dayStart", message: "Time to get to work!", date: dayStart)
+          } else {
+            NotificationUtil.removeNotification(id: "dayStart")
+          }
+        }
       
       HStack {
         Toggle("", isOn: $planningNotification)
@@ -46,9 +51,15 @@ struct ConfigView: View {
         DatePicker("Planning", selection: $planningTime, displayedComponents: [.hourAndMinute])
           .datePickerStyle(CompactDatePickerStyle())
       }.onAppear {
-        setTime(7, for: "dayStart", date: $dayStart)
         setTime(21, for: "planningTime", date: $planningTime)
       }.padding(10)
+        .onChange(of: planningNotification) { value in
+          if value {
+            NotificationUtil.scheduleRepeatingNotification(id: "planningTime", message: "Time to plan!", date: dayStart)
+          } else {
+            NotificationUtil.removeNotification(id: "planningTime")
+          }
+        }
     }
   }
   
