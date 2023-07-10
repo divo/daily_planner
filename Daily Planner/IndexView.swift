@@ -41,16 +41,6 @@ struct IndexView: View {
               }
               .onLongPressGesture(minimumDuration: 0.1) {
                 showingPopover = true
-              }.popover(isPresented: $showingPopover) {
-                VStack {
-                  DatePicker(selection: $selectedDate, in: Date.now..., displayedComponents: .date) {
-                    Text("Select a date for new entry")
-                  }
-                  Button("Done") {
-                    showingPopover = false
-                    pushEntry(date: self.selectedDate)
-                  }
-                }.padding(20)
               }
           }
           ToolbarItem(placement: .navigationBarLeading) {
@@ -58,11 +48,23 @@ struct IndexView: View {
                 showConfig = true
               } label: {
                 Image(systemName: "gear")
-                  .popover(isPresented: $showConfig) {
-                    ConfigView()
-                  }
               }
             }
+        }.popover(isPresented: $showingPopover) {
+          List {
+            VStack {
+              DatePicker(selection: $selectedDate, in: Date.now..., displayedComponents: .date) {
+                Text("Select a date for new entry")
+              }
+              Button("Done") {
+                showingPopover = false
+                pushEntry(date: self.selectedDate)
+              }
+            }
+          }
+        }
+        .popover(isPresented: $showConfig) {
+          ConfigView()
         }
     }
     .accentColor(Style.primaryColor)
