@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Daily_PlannerApp: App {
-    var body: some Scene {
-        WindowGroup {
-            IndexView()
-        }
+  init () {
+    FileUtil.setDriveURL()
+  }
+  
+  var body: some Scene {
+    WindowGroup {
+      IndexView()
     }
+  }
 }

@@ -8,12 +8,25 @@
 import Foundation
 
 struct FileUtil {
+  static var baseURL: URL = driveURL()
+  
+  static func setDriveURL() {
+    DispatchQueue.global().async {
+      baseURL = driveURL()
+    }
+  }
+  
+  static func driveURL() -> URL {
+    return (FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents"))!
+  }
+  
   static func getDocumentsDirectory() -> URL {
     // find all possible documents directories for this user
     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     
     // just send back the first one, which ought to be the only one
-    return paths[0]
+//    return paths[0]
+    return baseURL
   }
  
   static func listDocuments() -> [URL] {
