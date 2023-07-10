@@ -23,6 +23,9 @@ struct ConfigView: View {
           .frame(idealHeight: 20)
           .overlay(ViewUtil.divider(), alignment: .bottom)
       }.padding(10)
+        .onChange(of: habbitsText) { newValue in
+          UserDefaults().set(habbitsText, forKey: "habbits")
+        }
       
       HStack {
         Toggle("", isOn: $startNotification)

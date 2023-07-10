@@ -27,7 +27,7 @@ import Combine
   @objc @Published dynamic var todos: [TodoViewModel] = (0..<3).map { index in TodoViewModel(id: index) }
   @objc @Published dynamic var boredText = ""
   @objc @Published dynamic var hours: [HourViewModel] = (8..<22).map { index in HourViewModel(id: index) }
-  @objc @Published var habbits: [TodoViewModel] = [TodoViewModel(id: 1, text: "Anki", editable: false), TodoViewModel(id: 2, text: "Reading", editable: false), TodoViewModel(id: 3, text: "Workout", editable: false), TodoViewModel(id: 4, text: "Coding", editable: false),]
+  @objc @Published var habbits: [TodoViewModel] // [TodoViewModel(id: 1, text: "Anki", editable: false), TodoViewModel(id: 2, text: "Reading", editable: false), TodoViewModel(id: 3, text: "Workout", editable: false), TodoViewModel(id: 4, text: "Coding", editable: false),]
   @objc @Published dynamic var tomorrow = ""
   @objc @Published dynamic var grade = "A"
   @objc @Published dynamic var grades = ["A", "B", "C", "D", "F"]
@@ -35,7 +35,16 @@ import Combine
   
 //  @objc @Published dynamic var forwardEx: String? = ""
   
-  override init() {}
+  override init() {
+    self.habbits = []
+    super.init()
+    
+    if let hStrings = UserDefaults().string(forKey: "habbits")?.components(separatedBy: ", ") {
+      for index in 0..<hStrings.count {
+        self.habbits.append(TodoViewModel(id: index, text: hStrings[index], editable: false))
+      }
+    }
+  }
   
   // This is kinda janky and probably makes static type fans angry
   // lol.
