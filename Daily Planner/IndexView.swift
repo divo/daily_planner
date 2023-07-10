@@ -12,6 +12,7 @@ struct IndexView: View {
   @State var files = FileUtil.listDocuments()
   @State var showDetails = true
   @State var showingPopover = false
+  @State var showConfig = false
   @State var selectedDate = Calendar.current.date(byAdding: .day, value: 1, to: Date.now)!
   
   init() {
@@ -52,6 +53,16 @@ struct IndexView: View {
                 }.padding(20)
               }
           }
+          ToolbarItem(placement: .navigationBarLeading) {
+              Button {
+                showConfig = true
+              } label: {
+                Image(systemName: "gear")
+                  .popover(isPresented: $showConfig) {
+                    ConfigView()
+                  }
+              }
+            }
         }
     }
     .accentColor(Style.primaryColor)
