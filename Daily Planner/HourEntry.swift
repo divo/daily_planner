@@ -60,7 +60,7 @@ struct HourView: View{
             reminder = setReminder()
           } else {
             reminder = false
-            NotificationUtil.removeNotification(uuid: notificationID)
+            NotificationUtil.removeNotification(id: notificationID.uuidString)
             print("Notification removed")
           }
         }
@@ -84,6 +84,6 @@ struct HourView: View{
     let date = FileUtil.filenameToDate(date)
     let due = Calendar.current.date(byAdding: .hour, value: id, to: date)!
     print("Notification set for \(id) on \(date)")
-    return NotificationUtil.scheduleNotification(uuid: notificationID, message: text, date: due)
+    return NotificationUtil.scheduleNotification(id: notificationID.uuidString, message: text, date: due)
   }
 }

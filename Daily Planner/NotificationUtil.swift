@@ -20,6 +20,8 @@ struct NotificationUtil {
   
   static func scheduleNotification(uuid: UUID, message: String, date: Date) -> Bool {
     removeNotification(uuid: uuid) // I'm probably updating the message
+  static func scheduleNotification(id: String, message: String, date: Date) -> Bool {
+    removeNotification(id: id) // I'm probably updating the message
     
     let due = date.timeIntervalSince(Date.now)
     if due <= 0 {
@@ -34,12 +36,12 @@ struct NotificationUtil {
     // TODO: Check if notification already exists
     // Calculating a timeinterval instead of using Calender dates, what could go wrong.
     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: due, repeats: false)
-    let request = UNNotificationRequest(identifier: uuid.uuidString, content: content, trigger: trigger)
+    let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
     UNUserNotificationCenter.current().add(request)
     return true
   }
   
-  static func removeNotification(uuid: UUID) {
-    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [uuid.uuidString])
+  static func removeNotification(id: String) {
+    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
   }
 }
