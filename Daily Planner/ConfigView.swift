@@ -42,6 +42,8 @@ struct ConfigView: View {
           } else {
             NotificationUtil.removeNotification(id: "dayStart")
           }
+        }.onChange(of: dayStart) { newValue in
+          startNotification = false
         }
       
       HStack {
@@ -55,10 +57,12 @@ struct ConfigView: View {
       }.padding(10)
         .onChange(of: planningNotification) { value in
           if value {
-            NotificationUtil.scheduleRepeatingNotification(id: "planningTime", message: "Time to plan!", date: dayStart)
+            NotificationUtil.scheduleRepeatingNotification(id: "planningTime", message: "Time to plan!", date: planningTime)
           } else {
             NotificationUtil.removeNotification(id: "planningTime")
           }
+        }.onChange(of: planningTime) { newValue in
+          planningNotification = false
         }
     }
   }
