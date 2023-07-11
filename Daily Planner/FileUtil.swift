@@ -17,15 +17,14 @@ struct FileUtil {
   }
   
   static func driveURL() -> URL {
-    return (FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents"))!
+    guard let iCloudURL = (FileManager.default.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents")) else {
+      let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+      return paths[0]
+    }
+    return iCloudURL
   }
   
   static func getDocumentsDirectory() -> URL {
-    // find all possible documents directories for this user
-    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    
-    // just send back the first one, which ought to be the only one
-//    return paths[0]
     return baseURL
   }
  

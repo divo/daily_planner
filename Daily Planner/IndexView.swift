@@ -14,6 +14,7 @@ struct IndexView: View {
   @State var showingPopover = false
   @State var showConfig = false
   @State var selectedDate = Calendar.current.date(byAdding: .day, value: 1, to: Date.now)!
+  @State private var showToast = false
   
   init() {
     let navBarAppearance = UINavigationBar.appearance()
@@ -70,6 +71,14 @@ struct IndexView: View {
     .accentColor(Style.primaryColor)
     .onAppear {
       NotificationUtil.requestPermission()
+      // iCloud failed, using local storage
+      guard FileUtil.getDocumentsDirectory().absoluteString.contains("iCloud~DayEntries") else {
+        showToast = true
+        return
+      }
+      
+    }.toast(isPresenting: $showToast){
+      AlertToast(displayMode: .alert, type: .error(.orange), title: "iCloud not found, storing files localy")
     }
   }
   
