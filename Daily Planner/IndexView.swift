@@ -66,7 +66,7 @@ struct IndexView: View {
           }
         }
         .popover(isPresented: $showConfig) {
-          ConfigView()
+          ConfigView().frame(idealWidth: 400, idealHeight: 600)
         }
     }
     .accentColor(Style.primaryColor)
