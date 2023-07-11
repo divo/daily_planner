@@ -46,12 +46,23 @@ struct TodoView: View {
   @Binding var done: Bool
   @Binding var editable: Bool
   
+  let id: Int
+  let nextFocus: String
+  @FocusState var focusedField: String?
+  
   var body: some View {
     HStack {
       Toggle("", isOn: $done)
         .toggleStyle(CheckToggleStyle())
       if editable {
-        TextField("", text: $text).overlay(ViewUtil.divider(), alignment: .bottom).frame(idealWidth: .greatestFiniteMagnitude)
+        TextField("", text: $text)
+          .overlay(ViewUtil.divider(), alignment: .bottom)
+          .frame(idealWidth: .greatestFiniteMagnitude)
+          .focused($focusedField, equals: "todo_\(id)" )
+          .onSubmit {
+            focusedField = nextFocus
+          }
+
       } else {
         Text(text).strikethrough($done.wrappedValue)
       }

@@ -7,69 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Daily Planner/NotificationUtil.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "scheduleNotification(id:message:date:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B - f3ef40a11bccf11d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Daily_Planner.NotificationUtil.removeNotification(uuid: Foundation.UUID) -&gt; ()"
-                  moduleName = "Daily Planner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/NotificationUtil.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B - 8e62b347c5291452"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Daily_Planner.NotificationUtil.scheduleNotification(id: Swift.String, message: Swift.String, date: Foundation.Date) -&gt; Swift.Bool"
-                  moduleName = "Daily Planner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/NotificationUtil.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "444">
-               </Location>
-               <Location
-                  uuid = "504E0C84-BDE8-416B-8B2A-474CD0F2C17B - 8e62b347c5291452"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Daily_Planner.NotificationUtil.scheduleNotification(id: Swift.String, message: Swift.String, date: Foundation.Date) -&gt; Swift.Bool"
-                  moduleName = "Daily Planner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/NotificationUtil.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "468">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6EDD2DCF-2648-42A3-80B3-AF80F8497ABD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

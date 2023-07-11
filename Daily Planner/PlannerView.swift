@@ -6,6 +6,7 @@ struct PlannerView: View {
   @State var date: String = ""
   
   @Environment(\.scenePhase) var scenePhase
+  @FocusState var focusedField: String?
   
   let file: URL
   
@@ -16,13 +17,25 @@ struct PlannerView: View {
         TextEditor(text: $viewModel.beforeText)
           .frame(height: 100)
           .overlay(ViewUtil.divider(), alignment: .bottom)
+          .focused($focusedField, equals: "before")
+          .onChange(of: viewModel.beforeText) { newValue in
+            if newValue.last == "\t" {
+              viewModel.beforeText = String(newValue.dropLast())
+              focusedField = "improve"
+            }
+          }
         
         ViewUtil.textLabel("1 hour of self improvement on")
-        TextField("Habbit, Study or Skill", text: $viewModel.improvText).overlay(ViewUtil.divider(), alignment: .bottom)
+        TextField("Habbit, Study or Skill", text: $viewModel.improvText, onCommit: {
+          focusedField = "todo_0"
+        })
+        .overlay(ViewUtil.divider(), alignment: .bottom)
+        .focused($focusedField, equals: "improve")
         
         ViewUtil.textLabel("todo")
         ForEach($viewModel.todos, id: \.id) { todo in
-          TodoView(text: todo.text, done: todo.done, editable: todo.editable)
+          let nextTodo = (todo.id == viewModel.todos.count - 1 ? "hour_8" : "todo_\(todo.id + 1)")
+          TodoView(text: todo.text, done: todo.done, editable: todo.editable, id: todo.id, nextFocus: nextTodo, focusedField: _focusedField)
         }
         
         
@@ -38,7 +51,8 @@ struct PlannerView: View {
         
         ViewUtil.textLabel("schedule")
         ForEach($viewModel.hours, id: \.id) { hour in
-          HourView(id: hour.id, notificationID: hour.wrappedValue.notificationID, text: hour.text, reminder: hour.reminder, date: self.$date)
+          let nextHour = (hour.id == viewModel.hours.count - 7 ? "tomorrow" : "hour_\(hour.id + 1)")
+          HourView(id: hour.id, notificationID: hour.wrappedValue.notificationID, text: hour.text, reminder: hour.reminder, date: self.$date, nextFocus: nextHour, focusedField: _focusedField)
         }
       }
       
@@ -48,7 +62,7 @@ struct PlannerView: View {
         
         ViewUtil.textLabel("habbits")
         ForEach($viewModel.habbits, id: \.id) { habbit in
-          TodoView(text: habbit.text, done: habbit.done, editable: habbit.editable)
+          TodoView(text: habbit.text, done: habbit.done, editable: habbit.editable, id: habbit.id, nextFocus: "", focusedField: _focusedField)
         }
  
         
@@ -66,11 +80,25 @@ struct PlannerView: View {
         TextEditor(text: $viewModel.tomorrow)
           .frame(height: 100)
           .overlay(ViewUtil.divider(), alignment: .bottom)
+          .focused($focusedField, equals: "tomorrow")
+          .onChange(of: viewModel.tomorrow) { newValue in
+            if newValue.last == "\t" {
+              viewModel.beforeText = String(newValue.dropLast())
+              focusedField = "reflection"
+            }
+          }
         
         ViewUtil.textLabel("evening reflection")
         TextEditor(text: $viewModel.reflection)
           .frame(height: 100)
           .overlay(ViewUtil.divider(), alignment: .bottom)
+          .focused($focusedField, equals: "reflection")
+          .onChange(of: viewModel.reflection) { newValue in
+            if newValue.last == "\t" {
+              viewModel.beforeText = String(newValue.dropLast())
+              focusedField = "before"
+            }
+          }
       }
       
     }.navigationTitle(file.lastPathComponent)

@@ -47,6 +47,9 @@ struct HourView: View{
   @Binding var text: String
   @Binding var reminder: Bool
   @Binding var date: String //Not rendered, but need to set it in the View
+        
+  let nextFocus: String
+  @FocusState var focusedField: String?
   
   var body: some View {
     HStack{
@@ -69,6 +72,7 @@ struct HourView: View{
       
       TextField("", text: $text)
         .overlay(ViewUtil.divider(), alignment: .bottom)
+        .focused($focusedField, equals: "hour_\(id)")
         .onChange(of: text) { newValue in
           // TODO: Have reminder on by default setting here
           if newValue == "" {
@@ -76,6 +80,8 @@ struct HourView: View{
           } else {
             reminder = setReminder() // Fuck it
           }
+        }.onSubmit {
+          focusedField = nextFocus
         }
     }
   }
