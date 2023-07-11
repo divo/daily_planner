@@ -30,6 +30,9 @@ struct FileUtil {
  
   static func listDocuments() -> [URL] {
     try! FileManager.default.contentsOfDirectory(at: self.getDocumentsDirectory(), includingPropertiesForKeys: nil)
+      .filter({ url in
+        url.lastPathComponent.first != "."
+      })
   }
 
   static func checkFileExists(_ filename: String) -> Bool {
