@@ -81,6 +81,38 @@
             endingLineNumber = "29"
             landmarkName = "scheduleRepeatingNotification(id:message:date:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6EDD2DCF-2648-42A3-80B3-AF80F8497ABD - 5a44082bfbe64356"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Daily_Planner.NotificationUtil.scheduleRepeatingNotification(id: Swift.String, message: Swift.String, date: Foundation.Date) -&gt; Swift.Bool"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/NotificationUtil.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "792">
+               </Location>
+               <Location
+                  uuid = "6EDD2DCF-2648-42A3-80B3-AF80F8497ABD - 5a44082bfbe64356"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Daily_Planner.NotificationUtil.scheduleRepeatingNotification(id: Swift.String, message: Swift.String, date: Foundation.Date) -&gt; Swift.Bool"
+                  moduleName = "Daily Planner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stevendiviney/code/Daily%20Planner/Daily%20Planner/NotificationUtil.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "708">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
