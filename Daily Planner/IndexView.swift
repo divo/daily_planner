@@ -63,7 +63,7 @@ struct IndexView: View {
                 pushEntry(date: self.selectedDate)
               }
             }
-          }
+          }.frame(width: 400, height: 200)
         }
         .popover(isPresented: $showConfig) {
           ConfigView().frame(idealWidth: 400, idealHeight: 600)
